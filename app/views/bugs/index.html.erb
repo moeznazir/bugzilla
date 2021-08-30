@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">No.</th>
+            <th scope="col">Bug Title</th>
+            <th scope="col">Created By</th>
+            <% if current_user.user_role == "Manager" %>
+            <th scope="col">Assigned To</th>
+            <% end %>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @bug.map do |bug| %>
+
+          <tr>
+            <th scope="row"><%=bug.id%></th>
+            <td><%=bug.title%></td>
+            <td><%=bug.user.user_name%></td>
+            <% if current_user.user_role == "Manager" %>
+            <td><%=bug.assigned_to%></td>
+            <% end %>
+            <td>
+            <%= link_to 'Show', bug %>
+            <% if current_user.user_role == "Manager" %>
+             | <%= link_to 'Edit', edit_bug_path(bug)%> |
+              <%= link_to 'Destroy', bug, method: :delete, data: { confirm: 'Are you sure?' }  %>
+            <% end %>
+            <% if current_user.user_role == "Developer" %>
+            | <%= link_to 'Add Comment', new_status_path%>
+            <%end%>
+            </td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

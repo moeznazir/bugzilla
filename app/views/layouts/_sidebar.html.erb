@@ -1,0 +1,11 @@
+
+<% if logged_in? %>
+    <div class="sidebar">
+    <%= link_to "Profile", user_path(current_user.id) %>
+    <%= link_to "Bug List", bugs_path %>
+    <% if current_user.user_role == "Manager" %>
+        <%= link_to "Create Bug", bugs_new_path %>
+    <% end %>
+    </div>
+<% end %>
+

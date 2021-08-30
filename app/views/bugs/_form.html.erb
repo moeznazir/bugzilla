@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bug | Bugzilla</title>
+</head>
+<body>
+    <h1>Create Bug</h1>
+    <%= form_with(model: @bug, local: true) do |form| %>
+        <% if @bug.errors.any? %>
+        <div id="error_explanation">
+        <div class="alert alert-danger">
+        The form contains <%= pluralize(@bug.errors.count,"error") %>
+        <ul>
+        <% @bug.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+        </ul>
+        </div>
+        </div>
+        <% end %>
+        
+        <div class="mb-3">
+        <%= form.label :title %>
+        <%= form.text_field :title, class: "form-control", placeholder: "bug title" %>
+        </div>
+        <div class="mb-3">
+        <%= form.label :description %>
+        <%= form.text_area :description, class: "form-control", placeholder: "bug description" %>
+        </div>
+        <div class="mb-3">
+        <%= form.label :priority %>
+        <%= form.text_field :priority, class: "form-control", placeholder: "priority" %>
+        </div>
+        <div class="mb-3">
+        <%= form.label :estimated_time %>
+        <%= form.text_field :estimated_day_for_completion, class: "form-control", placeholder: "estimated_time" %>
+        </div>
+        <% if current_user.user_role == "Manager" %>
+        <div class="form-group">
+        <%= form.label :assigned_to %>
+        <%= form.select :assigned_to, @user.map { |user| [user.user_name]}, {}, class: "form-control" %>
+        </div>
+        <% end %>
+        
+        <%= form.text_field :user_id, class: "form-control", value: current_user.id, type: :hidden %>
+        <div class="mb-3">
+        <%= form.submit "Create Bug", class: "btn btn-primary" %>
+        </div>    
+        
+    <% end %>
+</body>
+</html>

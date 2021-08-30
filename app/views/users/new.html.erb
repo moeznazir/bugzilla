@@ -1,0 +1,40 @@
+<h1>Sign Up</h1>
+<%= form_with(model: @user, local: true) do |form| %>
+    <% if @user.errors.any? %>
+    <div id="error_explanation">
+    <div class="alert alert-danger">
+    The form contains <%= pluralize(@user.errors.count,
+    "error") %>.
+    <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+    </ul>
+    </div>
+    </div>
+    <% end %>
+    
+    <div class="mb-3">
+    <%= form.label :name %>
+    <%= form.text_field :user_name, class: "form-control", placeholder: "name" %>
+    </div>
+    <div class="mb-3">
+    <%= form.label :email %>
+    <%= form.text_field :email, class: "form-control", placeholder: "example@gmail.com" %>
+    </div>
+    <div class="mb-3">
+    <%= form.label :password %>
+    <%= form.password_field :password, class: "form-control", placeholder: "password" %>
+    </div>
+    <div class="mb-3">
+    <%= form.label :password_confirmation %>
+    <%= form.password_field :password_confirmation, class: "form-control", placeholder: "confirm password" %>
+    </div> 
+    <div class="mb-3">
+    <%= form.label :User_role %>
+    <%= form.select :user_role, ['Manager', 'Q/A', 'Developer'], {}, class: "form-control"%>
+    </div>
+    <div class="mb-3">
+    <%= form.submit "Get Started", class: "btn btn-primary" %>
+    </div>    
+<% end %>

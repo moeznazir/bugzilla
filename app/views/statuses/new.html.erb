@@ -1,0 +1,13 @@
+<%= form_with(model: @status, local: true) do |form| %>
+    <div class="form-group">    
+    <%= form.label :coment %>
+    <%= form.text_area :coment, class: "form-control" %>
+    </div>
+    <%= form.text_field :bug_id, value:  , :readonly => true %>
+    <div class="mb-3">
+    <%= form.submit "Done", class: "btn btn-primary" %>
+    </div>
+
+    <%= @bug.id %>
+<%end%>
+    

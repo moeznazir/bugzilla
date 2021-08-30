@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bugzilla</title>
+  <%= render 'layouts/rails_default' %>  
+  </head>
+
+  <body>
+  <%= render 'layouts/header' %>
+  <%= render 'layouts/sidebar' %>
+  <div class="container">
+    <%= render 'layouts/flash' %>
+    
+      <%= yield %>
+  </div>
+  </body>
+</html>

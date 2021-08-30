@@ -1,0 +1,159 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* universal */
+body {
+    padding-top: 60px;
+    }
+    section {overflow: auto;
+    }
+    textarea {
+    resize: vertical;
+    }
+    .center {
+    text-align: center;
+    }
+    .center h1 {
+    margin-bottom: 10px;
+    }
+
+    /* typography */
+    h1, h2, h3, h4, h5, h6 {
+    line-height: 1;
+    }
+    h1 {
+    font-size: 3em;
+    letter-spacing: -2px;
+    margin-bottom: 30px;
+    text-align: center;
+    }h2 {
+    font-size: 1.2em;
+    letter-spacing: -1px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: normal;
+    color: #777;
+    }
+    p {
+    font-size: 1.1em;
+    line-height: 1.7em;
+    }
+
+    /* header */
+    #logo {
+    float: left;
+    margin-right: 10px;
+    font-size: 1.7em;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: -1px;padding-top: 9px;
+    font-weight: bold;
+    }
+    #logo:hover {
+    color: #fff;
+    text-decoration: none;
+    }
+
+    /* footer */
+    footer {
+    margin-top: 45px;
+    padding-top: 5px;
+    border-top: 1px solid #eaeaea;
+    color: #777;
+    }
+    footer a {
+    color: #555;
+    }
+    footer a:hover {color: #222;
+    }
+    footer small {
+    float: left;
+    }
+    footer ul {
+    float: right;
+    list-style: none;
+    }
+    footer ul li {
+    float: left;
+    margin-left: 15px;
+    }
+
+   /* forms */
+    input, textarea, select, .uneditable-input {
+    border: 1px solid #bbb;
+    width: 100%;
+    margin-bottom: 15px;
+    /*@include box_sizing;*/
+    } 
+    input {
+    height: auto !important;
+    }
+    /* The side navigation menu */
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+  }
+  
+  /* Sidebar links */
+  .sidebar a {
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+  }
+  
+  /* Active/current link */
+  .sidebar a.active {
+    background-color: #33423d;
+    color: white;
+  }
+  
+  /* Links on mouse-over */
+  .sidebar a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+  }
+  
+  /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+  div.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 1000px;
+  }
+  
+  /* On screens that are less than 700px wide, make the sidebar into a topbar */
+  @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+  }
+  
+  /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+  @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+  } 
+
+  /* css for Bug_Table */
+  
+  
+  h4 {
+    margin: 2rem 0rem 1rem;
+  }
+  
+  .table-image {
+    td, th {
+      vertical-align: middle;
+    }
+  }
